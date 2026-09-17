@@ -55,3 +55,17 @@ def test_gets_expected_summary():
     result = student.summary()
 
     assert result == "Samara is a junior enrolled in 6 classes"
+
+def test_get_student_with_no_class():
+    name = NAME_1
+    grade = GRADE_1
+    classes = list(CLASSES_1)
+    classes.clear()
+    student = Student(name, grade, classes)
+    
+    result = student.get_num_classes()
+    
+    assert result == 0
+
+
+    
